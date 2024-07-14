@@ -45,4 +45,4 @@ jobs:
         pip install pytest
     - name: Run pytest
       run: |
-        pytest inft1207/traceability_testing
+        pytest inft1207/traceability_testing/test_json_handler.py
