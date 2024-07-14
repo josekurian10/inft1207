@@ -27,14 +27,14 @@ jobs:
       env:
         PYTHONPATH: ${{ github.workspace }}/inft1207/traceability_testing
       run: |
-        pylint inft1207/traceability_testing/test_json_handler.py
+        pylint 
 
   test:
     name: Test with pytest
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -45,4 +45,4 @@ jobs:
         pip install pytest
     - name: Run pytest
       run: |
-        pytest inft1207/traceability_testing/test_json_handler.py
+        pytest
