@@ -26,6 +26,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint
     - name: Run pylint
+      env:
+        PYTHONPATH: ${{ github.workspace }}/inft1207/traceability_testing
       run: |
         pylint inft1207/traceability_testing/test_json_handler.py
 
