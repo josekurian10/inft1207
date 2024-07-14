@@ -23,7 +23,8 @@ def pytest_runtest_makereport(item, call):
 
 
 def pytest_sessionstart(session):
-    session.config.traceability_matrix = {}
+    if not hasattr(session.config, 'traceability_matrix'):
+        session.config.traceability_matrix = {}
 
 
 def pytest_sessionfinish(session, exitstatus):
