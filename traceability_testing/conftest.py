@@ -1,11 +1,9 @@
 import pytest
 
-
 def pytest_runtest_protocol(item, nextitem):
     if hasattr(item, 'function') and hasattr(item.function, 'requirement'):
         print(f"Running test {item.nodeid} with requirement {item.function.requirement}")
     return None  # continue with the default test protocol
-
 
 def pytest_runtest_makereport(item, call):
     if call.when == 'call':
@@ -21,11 +19,9 @@ def pytest_runtest_makereport(item, call):
             result = 'PASS'
         item.config.traceability_matrix[item.nodeid] = (item.function.requirement, result)
 
-
 def pytest_sessionstart(session):
     if not hasattr(session.config, 'traceability_matrix'):
         session.config.traceability_matrix = {}
-
 
 def pytest_sessionfinish(session, exitstatus):
     print("Traceability Matrix:")
