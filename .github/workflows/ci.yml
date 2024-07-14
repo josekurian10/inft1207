@@ -27,7 +27,7 @@ jobs:
         pip install pylint
     - name: Run pylint
       run: |
-        pylint your_code_directory/*.py  # Replace 'your_code_directory' with the actual directory containing your Python files
+        pylint inft1207/traceability_testing
 
   test:
     name: Test with pytest
