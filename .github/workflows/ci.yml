@@ -27,7 +27,7 @@ jobs:
         pip install pylint
     - name: Run pylint
       run: |
-        pylint inft1207/traceability_testing/test_json_handler.py
+        pylint traceability_testing/test_json_handler.py
 
   test:
     name: Test with pytest
